@@ -19,9 +19,10 @@ const listenAddr = ":10600"
 const hashCount = int(10)
 
 func main() {
-    decrypting := true
+    decrypting := false
     passphrase := ""
     if len(os.Args) == 2 {
+        decrypting = true
         passphrase = os.Args[1]
     }
     server, err := net.Listen("tcp", listenAddr)
